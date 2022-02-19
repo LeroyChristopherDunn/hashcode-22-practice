@@ -1,7 +1,7 @@
 import {Input} from "./InputReader";
 import {Ingredients} from "./OutputWriter";
 
-export function evaluate(input: Input, ingredients: Ingredients): number{
+export function evaluate(input: Input, ingredients: Ingredients | Set<string>): number{
     const ingredientsSet = new Set(ingredients);
     let score = 0;
     for (let customer of input.customers) {
