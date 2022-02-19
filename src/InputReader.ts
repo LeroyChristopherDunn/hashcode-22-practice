@@ -17,9 +17,9 @@ export class InputReader{
         const customers: Customer[] = []
 
         const numClients = parseInt(lines[0]);
-        for (let i = 1; i < lines.length; i+=2) {
-            const likes: string[] = lines[i].split(' ').slice(1);
-            const dislikes: string[] = lines[i+1].split(' ').slice(1);
+        for (let i = 0; i < numClients; i++) {
+            const likes: string[] = lines[2*i+1].split(' ').slice(1);
+            const dislikes: string[] = lines[2*i+2].split(' ').slice(1);
             customers.push({likes, dislikes});
         }
 
