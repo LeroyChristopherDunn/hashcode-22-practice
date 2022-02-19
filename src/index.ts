@@ -1,6 +1,6 @@
 import {Input, InputReader} from "./InputReader";
 import {OutputWriter} from "./OutputWriter";
-import {allLikedIngredients} from "./Strategies";
+import {allIngredientsThatAreNotDisliked} from "./Strategies";
 
 const inputFileNames = [
     'a_an_example.in.txt',
@@ -14,7 +14,7 @@ for (let inputFileName of inputFileNames) {
     console.log(inputFileName);
     const input = new InputReader().read("./input/" + inputFileName);
     // logInput(inputFileName, input)
-    const ingredients = allLikedIngredients(input);
+    const ingredients = allIngredientsThatAreNotDisliked(input);
     new OutputWriter().write("./output/" + inputFileName, ingredients);
 }
 

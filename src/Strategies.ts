@@ -8,3 +8,12 @@ export function allLikedIngredients(input: Input): Ingredients{
     })
     return Array.from(allLikedIngredients);
 }
+
+export function allIngredientsThatAreNotDisliked(input: Input){
+    const ingredients = new Set<string>();
+    input.customers.forEach(customer => {
+        customer.likes.forEach(ingredient => ingredients.add(ingredient));
+        customer.dislikes.forEach(ingredient => ingredients.delete(ingredient));
+    })
+    return Array.from(ingredients);
+}
